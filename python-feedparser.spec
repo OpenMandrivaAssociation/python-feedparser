@@ -9,7 +9,6 @@ Source0: http://ovh.dl.sourceforge.net/sourceforge/%{pkgname}/%{pkgname}-%{versi
 License: BSD
 URL: http://feedparser.org/
 Group: Development/Python
-BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 Requires: python
 BuildRequires: python-devel
 BuildArch: noarch
