@@ -26,7 +26,7 @@ perl -pi -e 's/\r\n$/\n/' $(find docs -type f)
 CFLAGS="$RPM_OPT_FLAGS" python setup.py build
 
 %install
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+PYTHONDONTWRITEBYTECODE= python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -34,5 +34,3 @@ rm -rf $RPM_BUILD_ROOT
 %files -f INSTALLED_FILES
 %defattr(-,root,root)
 %doc LICENSE README docs/
-
-
