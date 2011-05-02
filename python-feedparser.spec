@@ -1,11 +1,10 @@
 %define pkgname feedparser
-%define version 4.1
 
 Summary: Parse RSS and Atom feeds in Python
 Name: python-feedparser
-Version: %{version}
-Release: %mkrel 9
-Source0: http://downloads.sourceforge.net/%{pkgname}/%{pkgname}-%{version}.tar.bz2
+Version: 5.0.1
+Release: %mkrel 1
+Source0: http://downloads.sourceforge.net/%{pkgname}/%{pkgname}-%{version}.tar.gz
 License: BSD
 URL: http://feedparser.org/
 Group: Development/Python
@@ -19,13 +18,19 @@ Feedparser is the "Universal Feed Parser" library for python, which
 handles RSS 0.9x, RSS 1.0, RSS 2.0, CDF, Atom 0.3, and Atom 1.0 feeds
 
 %prep
-%setup -q -n %{pkgname}-%{version} -c  
+%setup -q -n %{pkgname}-%{version}
 
-perl -pi -e 's/\r\n$/\n/' $(find docs -type f)
 %build
 CFLAGS="$RPM_OPT_FLAGS" python setup.py build
 
+%check
+pushd feedparser
+    python feedparsertest.py
+popd
+
 %install
+rm -rf $RPM_BUILD_ROOT
+
 PYTHONDONTWRITEBYTECODE= python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
 
 %clean
@@ -33,4 +38,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f INSTALLED_FILES
 %defattr(-,root,root)
-%doc LICENSE README docs/
+%doc LICENSE README
