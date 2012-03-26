@@ -11,6 +11,7 @@ URL: http://feedparser.org/
 Group: Development/Python
 Requires: python
 BuildRequires: python-devel
+BuildRequires: python-setuptools
 BuildArch: noarch
 
 %description
