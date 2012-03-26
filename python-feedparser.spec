@@ -2,13 +2,13 @@
 
 Summary: Parse RSS and Atom feeds in Python
 Name: python-feedparser
-Version: 5.0.1
-Release: %mkrel 1
-Source0: http://downloads.sourceforge.net/%{pkgname}/%{pkgname}-%{version}.tar.gz
+Version: 5.1.1
+Release: 1
+
+Source0: http://pypi.python.org/packages/source/f/feedparser/%{pkgname}-%{version}.tar.bz2
 License: BSD
 URL: http://feedparser.org/
 Group: Development/Python
-BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 Requires: python
 BuildRequires: python-devel
 BuildArch: noarch
@@ -29,13 +29,9 @@ pushd feedparser
 popd
 
 %install
-rm -rf %{buildroot}
 
-PYTHONDONTWRITEBYTECODE= python setup.py install --root=%{buildroot} --record=INSTALLED_FILES
+PYTHONDONTWRITEBYTECODE= python setup.py install --root=%{buildroot}
 
-%clean
-rm -rf %{buildroot}
-
-%files -f INSTALLED_FILES
-%defattr(-,root,root)
+%files
 %doc LICENSE README
+%py_puresitedir/*
