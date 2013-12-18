@@ -12,7 +12,7 @@ Group:		Development/Python
 BuildRequires:	pkgconfig(python2)
 BuildRequires:  python3-devel
 BuildRequires:	python-setuptools
-BuildRequires:  python3egg(setuptools)
+BuildRequires:  python3-distribute
 BuildArch:	noarch
 
 %description
