@@ -55,6 +55,7 @@ rm -Rf %{buildroot}%{py3_puresitedir}/__pycache__
 %defattr(644,root,root,755)
 %doc python3/LICENSE python3/
 %{py3_puresitedir}/%{modname}*
+%{py3_puresitedir}/__pycache__/feedparser.cpython*
 
 %files -n python2-feedparser
 %defattr(644,root,root,755)
