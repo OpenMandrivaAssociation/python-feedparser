@@ -2,17 +2,17 @@
 
 Summary:	Parse RSS and Atom feeds in Python
 Name:		python-%{modname}
-Version:	5.1.3
-Release:	8
+Version:	5.2.1
+Release:	1
 
 Source0:	http://feedparser.googlecode.com/files/feedparser-%{version}.tar.gz
 License:	BSD
 URL:		http://code.google.com/p/feedparser/
 Group:		Development/Python
 BuildRequires:	pkgconfig(python2)
-BuildRequires:  python3-devel
+BuildRequires:  python-devel
 BuildRequires:	python2-distribute
-BuildRequires:  python3-distribute
+BuildRequires:  python-distribute
 BuildArch:	noarch
 %rename		python3-%{modname}
 
