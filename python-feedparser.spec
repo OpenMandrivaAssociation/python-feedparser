@@ -31,5 +31,5 @@ rm -Rf %{buildroot}%{py3_puresitedir}/__pycache__
 
 %files
 %defattr(644,root,root,755)
-%{py3_puresitedir}/%{modname}*
+#{py3_puresitedir}/%{modname}*
 #{py3_puresitedir}/__pycache__/feedparser.cpython*
