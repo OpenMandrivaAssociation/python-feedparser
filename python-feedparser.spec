@@ -19,7 +19,7 @@ Feedparser is the "Universal Feed Parser" library for python, which
 handles RSS 0.9x, RSS 1.0, RSS 2.0, CDF, Atom 0.3, and Atom 1.0 feeds
 
 %prep
-%setup -q %{module}-%{version}
+%setup -qn %{module}-%{version}
 
 %build
 %py_build
