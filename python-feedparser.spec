@@ -22,10 +22,10 @@ handles RSS 0.9x, RSS 1.0, RSS 2.0, CDF, Atom 0.3, and Atom 1.0 feeds
 %setup -q -c
 
 %build
-%py_build
+%python3_build
 
 %install
-%py_install
+%python3_install
 
 rm -Rf %{buildroot}%{py3_puresitedir}/__pycache__
 
