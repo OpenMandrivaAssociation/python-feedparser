@@ -31,5 +31,19 @@ rm -Rf %{buildroot}%{py3_puresitedir}/__pycache__
 
 %files
 %defattr(644,root,root,755)
-#{py3_puresitedir}/%{modname}*
-#{py3_puresitedir}/__pycache__/feedparser.cpython*
+%{python_sitelib}/feedparser-%{version}-py*.*.egg-info/
+%{python_sitelib}/feedparser/__init__.py
+%{python_sitelib}/feedparser/__pycache__*
+%{python_sitelib}/feedparser/api.py
+%{python_sitelib}/feedparser/datetimes/*
+%{python_sitelib}/feedparser/encodings.py
+%{python_sitelib}/feedparser/exceptions.py
+%{python_sitelib}/feedparser/html.py
+%{python_sitelib}/feedparser/http.py
+%{python_sitelib}/feedparser/mixin.py
+%{python_sitelib}/feedparser/namespaces/*
+%{python_sitelib}/feedparser/parsers/*
+%{python_sitelib}/feedparser/sanitizer.py
+%{python_sitelib}/feedparser/sgml.py
+%{python_sitelib}/feedparser/urls.py
+%{python_sitelib}/feedparser/util.py
