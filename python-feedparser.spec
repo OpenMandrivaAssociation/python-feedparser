@@ -21,8 +21,11 @@ handles RSS 0.9x, RSS 1.0, RSS 2.0, CDF, Atom 0.3, and Atom 1.0 feeds
 %prep
 %setup -q -c
 
-%__python3 setup.py install --root=%{buildroot}
-popd
+%build
+%py_build
+
+%install
+%py_install
 
 rm -Rf %{buildroot}%{py3_puresitedir}/__pycache__
 
