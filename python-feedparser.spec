@@ -3,7 +3,7 @@
 Summary:	Parse RSS and Atom feeds in Python
 Name:		python-%{modname}
 Version:	6.0.8
-Release:	1
+Release:	2
 
 Source0:	https://files.pythonhosted.org/packages/96/c2/5c5c266988142936ca81aaa22e5ef3750cce49e10c0ee9d0b9feda167491/feedparser-6.0.8.tar.gz
 License:	BSD
@@ -33,7 +33,6 @@ rm -Rf %{buildroot}%{py3_puresitedir}/__pycache__
 %defattr(644,root,root,755)
 %{python_sitelib}/feedparser-%{version}-py*.*.egg-info/
 %{python_sitelib}/feedparser/__init__.py
-%{python_sitelib}/feedparser/__pycache__*
 %{python_sitelib}/feedparser/api.py
 %{python_sitelib}/feedparser/datetimes/*
 %{python_sitelib}/feedparser/encodings.py
