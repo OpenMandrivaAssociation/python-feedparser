@@ -2,7 +2,7 @@
 
 Summary:	Parse RSS and Atom feeds in Python
 Name:		python-%{modname}
-Version:	6.0.12
+Version:	6.0.14
 Release:	1
 
 Source0:	https://files.pythonhosted.org/packages/source/f/feedparser/feedparser-%{version}.tar.gz
@@ -19,7 +19,7 @@ Feedparser is the "Universal Feed Parser" library for python, which
 handles RSS 0.9x, RSS 1.0, RSS 2.0, CDF, Atom 0.3, and Atom 1.0 feeds
 
 %prep
-%setup -qn %{modname}-%{version}
+%setup -qn %{modname}-%{version} -n feedparser-6.0.14
 
 %build
 %py_build
