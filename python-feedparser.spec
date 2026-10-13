@@ -6,11 +6,14 @@ Version:	6.0.14
 Release:	1
 
 Source0:	https://files.pythonhosted.org/packages/source/f/feedparser/feedparser-%{version}.tar.gz
-License:	BSD
+License:	BSD-2-Clause
 URL:		https://pypi.org/project/feedparser/
 Group:		Development/Python
-BuildRequires:  python-devel
-BuildRequires: python%{pyver}dist(setuptools)
+BuildRequires:	pkgconfig(python3)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(feedparser-sgmllib)
+BuildRequires:	python%{pyver}dist(wheel)
 BuildArch:	noarch
 %rename		python3-%{modname}
 
@@ -27,22 +30,8 @@ handles RSS 0.9x, RSS 1.0, RSS 2.0, CDF, Atom 0.3, and Atom 1.0 feeds
 %install
 %py_install
 
-rm -Rf %{buildroot}%{py3_puresitedir}/__pycache__
-
 %files
-%defattr(644,root,root,755)
-%{python_sitelib}/feedparser-%{version}-py*.*.egg-info/
-%{python_sitelib}/feedparser/__init__.py
-%{python_sitelib}/feedparser/api.py
-%{python_sitelib}/feedparser/datetimes/*
-%{python_sitelib}/feedparser/encodings.py
-%{python_sitelib}/feedparser/exceptions.py
-%{python_sitelib}/feedparser/html.py
-%{python_sitelib}/feedparser/http.py
-%{python_sitelib}/feedparser/mixin.py
-%{python_sitelib}/feedparser/namespaces/*
-%{python_sitelib}/feedparser/parsers/*
-%{python_sitelib}/feedparser/sanitizer.py
-%{python_sitelib}/feedparser/sgml.py
-%{python_sitelib}/feedparser/urls.py
-%{python_sitelib}/feedparser/util.py
+%license LICENSE
+%doc README.rst
+%{python_sitelib}/feedparser
+%{python_sitelib}/feedparser-%{version}.dist-info
